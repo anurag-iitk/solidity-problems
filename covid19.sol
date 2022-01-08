@@ -55,7 +55,17 @@ contract COVID is Ownable,Pausable{
         hosp[hosp_id].own_patients.push(aadhar);
     }
     
-  
+    function updatePatientState(uint hosp_id,uint aadhar,uint state,string memory hash)public onlyRegistered(hosp_id){
+        pat[aadhar].report_hash = hash;
+        if(state == 0)
+        {pat[aadhar].patient_state = State.Tested;}
+        if(state == 1)
+        {pat[aadhar].patient_state = State.Active;}
+        if(state == 2)
+        {pat[aadhar].patient_state = State.Recovered;}
+        if(state == 3)
+        {pat[aadhar].patient_state = State.Deceased;}
+    }
     
     function viewpatient(uint aadhar)public view returns(patient memory){
         return pat[aadhar];
