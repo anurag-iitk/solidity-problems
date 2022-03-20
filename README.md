@@ -1,3 +1,3 @@
 # Solidity
 Simple and too easy solidity smart contracts.
-Happy to read you this!
+This repository I'm solving basic to advanced concept in solidity. And also create some smart contracts.
